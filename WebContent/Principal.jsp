@@ -18,7 +18,7 @@
 	      <div class="background">
 	        <img src="img/paisagem.jpg">
 	      </div>
-	      <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+	      <a href="#!user"><img class="circle" src="img/iconPadrao.jpg"></a>
 	      <a href="#!name"><span class="white-text name">${nome}</span></a>
 	      <a href="#!email"><span class="white-text email">${usuario}</span></a>
 	    </div></li>
