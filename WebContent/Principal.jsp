@@ -34,16 +34,13 @@
 	      <div class="nav-wrapper  teal darken-4">
 	      	<a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
 	        <a href="#!" class="brand-logo"><img class="circle" alt="" src="img/logo.png" height="60px"></a>
-	        <ul class="right hide-on-med-and-down">
-	          <li><a href="sass.html">Sass</a></li>
-	          <li><a href="badges.html">Components</a></li>
-	        </ul>
 	      </div>
 	    </nav>
 	  </div>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="materialize/js/plugin.js"></script>
+    
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="materialize/js/plugin.js"></script>
   </body>
 </html>
