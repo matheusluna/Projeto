@@ -52,7 +52,7 @@ public class Login extends HttpServlet {
 					HttpSession session = request.getSession();
 					session.setAttribute("usuario", p.getEmail());
 					session.setAttribute("nome", p.getNome());
-					request.getRequestDispatcher("Principal.jsp").forward(request, response);
+					request.getRequestDispatcher("principal.jsp").forward(request, response);
 				}
 			}
 		} catch (ClassNotFoundException | SQLException e) {
