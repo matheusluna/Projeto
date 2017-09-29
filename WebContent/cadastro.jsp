@@ -23,7 +23,7 @@
       <div class="divider"></div>
       <div class="row"><label>${mensagem}</label></div>
       <div class="row">
-        <form class="col s12" action="CadastroServlet" method="POST">
+        <form class="col s12" action="CadastroServlet" method="post">
           <div class="row">
             <div class="input-field col s6">
               <input id="nome" type="text" name="nome" value="" required>

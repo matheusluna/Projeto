@@ -18,4 +18,5 @@ $(document).ready(function() {
     labelYearSelect: 'Selecione um ano',
     format: 'dd/mm/yyyy'
   });
+  $(".button-collapse").sideNav();
 });
