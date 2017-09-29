@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('.button-collapse').sideNav('show');
   $('select').material_select();
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
@@ -18,5 +19,5 @@ $(document).ready(function() {
     labelYearSelect: 'Selecione um ano',
     format: 'dd/mm/yyyy'
   });
-  $(".button-collapse").sideNav('show');
+  
 });
