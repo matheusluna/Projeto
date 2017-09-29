@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.button-collapse').sideNav('show');
+  $('.button-collapse').sideNav();
   $('select').material_select();
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
