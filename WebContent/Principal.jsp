@@ -22,7 +22,7 @@
 	      <a href="#!name"><span class="white-text name">${nome}</span></a>
 	      <a href="#!email"><span class="white-text email">${usuario}</span></a>
 	    </div></li>
-	    <li><a href="Logout"><i class="material-icons">power</i>logout</a></li>
+	    <li><i class="material-icons">power</i><form action="Login" method="get"><input type="submit" value="logout"></form></li>
 	    <li><a href="#!">Second Link</a></li>
 	    <li><div class="divider"></div></li>
 	    <li><a class="subheader">Subheader</a></li>
