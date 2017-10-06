@@ -22,11 +22,10 @@
 	      <a href="#!name"><span class="white-text name">${nome}</span></a>
 	      <a href="#!email"><span class="white-text email">${usuario}</span></a>
 	    </div></li>
-	    <li><i class="material-icons">power</i><form action="Login" method="get"><input type="submit" value="logout"></form></li>
-	    <li><a href="#!">Second Link</a></li>
-	    <li><div class="divider"></div></li>
-	    <li><a class="subheader">Subheader</a></li>
+	    
+	    <li><a href="/Projeto/Perfil">Perfil</a></li>
 	    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+	    <li><a href="/Projeto/Logout"><i class="material-icons">power_settings_new</i>Logout</a></li>
 	  </ul>
 	  
   	<div class="navbar-fixed">
