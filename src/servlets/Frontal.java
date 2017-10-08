@@ -39,14 +39,14 @@ public class Frontal extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         String control = request.getParameter("ex");
         System.out.println(control);
-//        try {
-//            Comando com = (Comando) Class.forName("controladores."+control+"Controller").newInstance();
-//            com.execute(request, response);
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex1) {
-//            Logger.getLogger(Frontal.class.getName()).log(Level.SEVERE, null, ex1);
-//        } catch (SQLException ex1) {
-//            Logger.getLogger(Frontal.class.getName()).log(Level.SEVERE, null, ex1);
-//        }
+        try {
+            Comando com = (Comando) Class.forName("controladores."+control+"Controller").newInstance();
+            com.execute(request, response);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex1) {
+            Logger.getLogger(Frontal.class.getName()).log(Level.SEVERE, null, ex1);
+        } catch (SQLException ex1) {
+            Logger.getLogger(Frontal.class.getName()).log(Level.SEVERE, null, ex1);
+        }
     }
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
