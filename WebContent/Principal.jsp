@@ -18,13 +18,15 @@
 	      <div class="background">
 	        <img src="img/paisagem.jpg">
 	      </div>
-	      <a href="#!user"><img class="circle" src="img/iconPadrao.jpg"></a>
-	      <a href="#!name"><span class="white-text name">${nome}</span></a>
-	      <a href="#!email"><span class="white-text email">${usuario}</span></a>
+	      <a href="/Projeto/Perfil"><img class="circle" src="img/iconPadrao.jpg"></a>
+	      <a href="/Projeto/Perfil"><span class="white-text name">${nome}</span></a>
+	      <a href="/Projeto/Perfil"><span class="white-text email">${usuario}</span></a>
 	    </div></li>
 	    
 	    <li><a href="/Projeto/Perfil">Perfil</a></li>
-	    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+	    <li><a href="/Projeto/Notificacao">Notificações</a></li>
+	    <li><a class="waves-effect" href="#!">Pequisar</a></li>
+	    <li><a class="waves-effect" href="/Projeto/Amigo">Amigos</a></li>
 	    <li><a href="/Projeto/Logout"><i class="material-icons">power_settings_new</i>Logout</a></li>
 	  </ul>
 	  

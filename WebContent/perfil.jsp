@@ -19,20 +19,20 @@
 			<div class="container">
 				<div class="container">
 					<div class="row">
-					   <div class="col s12">
-					     <div class="card">
-					       <div class="card-image">
-					         <img src="img/iconPadrao.jpg">
-					         <span class="card-title teal-text text-teal lighten-5">${nome}</span>
-					         <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">edit</i></a>
-					       </div>
-					       <div class="card-content">
-					         <p>${email}</p>
-					         <p>${cidade}</p>
-					       </div>
-					     </div>
-					   </div>
-					 </div>
+					    <div class="col s12">
+					      <div class="card">
+					        <div class="card-image">
+					          <img src="img/iconPadrao.jpg">
+					          <span class="card-title">${nome}</span>
+					          <a class="btn-floating btn-large halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+					        </div>
+					        <div class="card-content">
+					          <p>${email}</p>
+					          <p>${cidade}</p>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
 				</div>
 			</div>
 		</div>
