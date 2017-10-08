@@ -14,6 +14,7 @@
   </head>
 
   <body>
+  	
   	<ul id="slide-out" class="side-nav">
 	    <li><div class="user-view">
 	      <div class="background">
@@ -33,11 +34,29 @@
 	    
 	    <li><a href="/Projeto/Perfil">Perfil</a></li>
 	    <li><a href="/Projeto/Notificacao">Notificações</a></li>
-	    <li><a class="waves-effect" href="#!">Pequisar</a></li>
+	    <li><a href="#" data-activates="slide-out2" class="button-collapse2 show-on-large">Pesquisa</a></li>
 	    <li><a class="waves-effect" href="/Projeto/Amigo">Amigos</a></li>
 	    <li><a href="/Projeto/Frontal?ex=Logout"><i class="material-icons">power_settings_new</i>Logout</a></li>
 	  </ul>
-	  
+	
+	
+	  <ul id="slide-out2" class="side-nav">
+	    <form active="Frontal" method="post">
+	    	<div class="row">
+	    		<div class="input-field col s12">
+	    			<input type="text" name="pesquisa">
+	    		</div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="input-field col s12">
+	    			<input type="hidden" name="ex" value="PesquisaUsuario">
+	    			<input class="btn" type="submit" value="Pesquisar">
+	    		</div>
+	    	</div>
+	    </form>
+	</ul>
+	
+	
   	<div class="navbar-fixed">
 	    <nav>
 	      <div class="nav-wrapper  teal darken-4">
