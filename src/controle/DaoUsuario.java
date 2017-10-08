@@ -45,9 +45,9 @@ public class DaoUsuario implements DaoUsuarioInterface{
 	public List<Pessoa> pesquisa(String pesquisa) throws ClassNotFoundException, SQLException{
 		List<Pessoa> lista = new ArrayList<>();
 		Connection con = new ConFactory().getConnection();
-		String sql ="select * from usuario u where u.nome ilike ?%";
+		String sql ="select * from usuario u where u.nome ilike ?";
 		PreparedStatement stmt = con.prepareStatement(sql);
-		stmt.setString(1, pesquisa);
+		stmt.setString(1, pesquisa+"%");
 		ResultSet rs = stmt.executeQuery();
 		while(rs.next()) {
 			String email = rs.getString("email");
