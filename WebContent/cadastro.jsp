@@ -70,13 +70,13 @@
                 <input type="file">
               </div>
               <div class="file-path-wrapper">
-              	<input type="hidden" name="ex" value="CadastroUsuario">
                 <input name="foto" class="file-path validate" type="text">
               </div>
             </div>
           </div>
           <div class="fixed-action-btn">
-            <button type="submit" class="btn-floating btn-large teal darken-3" name="cadastro"><i class="large material-icons">done</i></button>
+            <input type="hidden" name="ex" value="CadastroUsuario">
+            <input class="btn" type="submit" value="Salvar">
           </div>
         </form>
       </div>

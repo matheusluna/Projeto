@@ -18,6 +18,7 @@ import interfaces.Comando;
 public class CadastroUsuarioController implements Comando{
 	private HttpServletRequest request;
     private HttpServletResponse response;
+    
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ClassNotFoundException, IOException, ServletException {
@@ -50,9 +51,10 @@ public class CadastroUsuarioController implements Comando{
 		Pessoa pessoa = new Pessoa(email, nome, cidade, profissao, nascimento, sexo, foto, senha);
 		
 		if(dao.create(pessoa)) {
+			System.out.println("Aqui");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}else {
-			request.setAttribute("mensagem", "<script>alert('Não foi possível cadastrar o usuário')</script>");
+			request.setAttribute("mensagem", "Não foi possível cadastrar o usuário");
 			request.getRequestDispatcher("cadastro.jsp").forward(request, response);
 		}
 				
