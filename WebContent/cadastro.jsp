@@ -23,7 +23,7 @@
       <div class="divider"></div>
       <div class="row"><label>${mensagem}</label></div>
       <div class="row">
-        <form class="col s12" action="Frontal" method="post">
+        <form class="col s12" action="Frontal" method="post" enctype="multipart/form-data">
           <div class="row">
             <div class="input-field col s6">
               <input id="nome" type="text" name="nome" value="" required>

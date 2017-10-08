@@ -28,7 +28,7 @@ public class CadastroUsuarioController implements Comando{
 		String cidade = request.getParameter("cidade");
 		String dataNascimento = request.getParameter("nascimento");
 		//transformando string em data
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	    LocalDate nascimento = LocalDate.parse(dataNascimento,formatter);
 		
 		String email = request.getParameter("email");
