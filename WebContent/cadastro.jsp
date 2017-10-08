@@ -67,7 +67,7 @@
             <div class="file-field input-fiel col s12">
               <div class="btn">
                 <span>Foto</span>
-                <input type="file">
+                <input name="foto" type="file">
               </div>
               <div class="file-path-wrapper">
                 <input name="foto" class="file-path validate" type="text">

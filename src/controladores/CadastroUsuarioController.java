@@ -36,14 +36,14 @@ public class CadastroUsuarioController implements Comando{
 		String senha = request.getParameter("senha");
 		String profissao = request.getParameter("profissao");
 		String sexo = request.getParameter("sexo");
-		
+		System.out.println(email);
 		//foto
 		String caminho = File.separator+request.getServletContext().getRealPath("img")+File.separator+email;
 		File caminhoUser = new File(caminho);
 		if(!caminhoUser.exists()) {
 			caminhoUser.mkdirs();
 		}
-		Part path = request.getPart("fotoPerfil");
+		Part path = request.getPart("foto");
 		String cam = caminho+File.separator+path.getSubmittedFileName();
 		path.write(cam);
 		String foto = "img"+File.separator+email+File.separator+path.getSubmittedFileName();
@@ -52,6 +52,7 @@ public class CadastroUsuarioController implements Comando{
 		
 		if(dao.create(pessoa)) {
 			System.out.println("Aqui");
+			request.setAttribute("mensagem", "<script>alert('Usuário cadastrado com sucesso')</script>");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}else {
 			request.setAttribute("mensagem", "Não foi possível cadastrar o usuário");

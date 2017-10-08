@@ -36,12 +36,14 @@
                       <label for="senha">Senha</label>
                     </div>
                   </div>
+                  <div class="row">${mensagem}</div>
                   <div class="row">
                     <div class="col s12">
                       <label>Não possui conta? <a href="cadastro.jsp">Clique aqui</a></label>
                     </div>
                   </div>
                   <div class="row center-align">
+                  	<input type="hidden" name="ex" value="Login">
                     <input class="btn" type="submit" name="" value="Login">
                   </div>
                 </form>

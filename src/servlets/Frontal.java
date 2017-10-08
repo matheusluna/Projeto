@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +19,7 @@ import interfaces.Comando;
  * Servlet implementation class Frontal
  */
 @WebServlet("/Frontal")
+@MultipartConfig
 public class Frontal extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
