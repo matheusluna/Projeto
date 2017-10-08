@@ -54,7 +54,7 @@
 	    		</div>
 	    	</div>
 	    </form>
-	</ul>
+	  </ul>
 	
 	
   	<div class="navbar-fixed">
