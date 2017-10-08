@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
@@ -18,7 +19,14 @@
 	      <div class="background">
 	        <img src="img/paisagem.jpg">
 	      </div>
-	      <a href="/Projeto/Perfil"><img class="circle" src="img/iconPadrao.jpg"></a>
+		  <c:choose>
+		  	<c:when test="${foto eq ''}">
+		  		<a href="/Projeto/Perfil"><img class="circle" src="img/iconPadrao.jpg"></a>
+		  	</c:when>
+		  	<c:otherwise>
+		  		<a href="/Projeto/Perfil"><img class="circle" src= "${foto}"></a>
+		  	</c:otherwise>
+		  </c:choose>	      
 	      <a href="/Projeto/Perfil"><span class="white-text name">${nome}</span></a>
 	      <a href="/Projeto/Perfil"><span class="white-text email">${usuario}</span></a>
 	    </div></li>
@@ -27,7 +35,7 @@
 	    <li><a href="/Projeto/Notificacao">Notificações</a></li>
 	    <li><a class="waves-effect" href="#!">Pequisar</a></li>
 	    <li><a class="waves-effect" href="/Projeto/Amigo">Amigos</a></li>
-	    <li><a href="/Projeto/Logout"><i class="material-icons">power_settings_new</i>Logout</a></li>
+	    <li><a href="/Projeto/Frontal?ex=Logout"><i class="material-icons">power_settings_new</i>Logout</a></li>
 	  </ul>
 	  
   	<div class="navbar-fixed">

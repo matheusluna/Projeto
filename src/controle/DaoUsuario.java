@@ -41,6 +41,31 @@ public class DaoUsuario implements DaoUsuarioInterface{
 		con.close();
 		return lista;
 	}
+	
+	public List<Pessoa> pesquisa(String pesquisa) throws ClassNotFoundException, SQLException{
+		List<Pessoa> lista = new ArrayList<>();
+		Connection con = new ConFactory().getConnection();
+		String sql ="select * from usuario u where u.nome ilike ?%";
+		PreparedStatement stmt = con.prepareStatement(sql);
+		stmt.setString(1, pesquisa);
+		ResultSet rs = stmt.executeQuery();
+		while(rs.next()) {
+			String email = rs.getString("email");
+			String nome = rs.getString("nome");
+			String cidade = rs.getString("cidade");
+			String profissao = rs.getString("profissao");
+			Date nascimento = rs.getDate("nascimento");
+			Instant instant = Instant.ofEpochMilli(nascimento.getTime());
+	        LocalDate localDate = LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalDate();
+			String sexo = rs.getString("sexo");
+			String foto = rs.getString("foto");
+			String senha = rs.getString("senha");
+			Pessoa pessoa = new Pessoa(email, nome, cidade, profissao, localDate, sexo, foto, senha);
+			lista.add(pessoa);
+		}
+		return lista;
+	}
+	
 	@Override
 	public boolean create(Pessoa pessoa) throws ClassNotFoundException, SQLException{
 		// TODO Auto-generated method stub

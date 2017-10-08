@@ -29,7 +29,7 @@ public class LoginController implements Comando {
 		if(pessoa.validaUsuario(request.getParameter("senha"))) {
 			HttpSession session = request.getSession();
 			session.setAttribute("usuario", pessoa.getEmail());
-			session.setAttribute("Nome", pessoa.getNome());
+			session.setAttribute("nome", pessoa.getNome());
 			session.setAttribute("foto", pessoa.getFoto());
 			
 			request.getRequestDispatcher("Principal.jsp").forward(request, response);

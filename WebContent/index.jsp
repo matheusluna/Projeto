@@ -23,7 +23,7 @@
                 <img class="circle" src="img/logo.png" height="200px" alt="">
               </div>
               <div class="row">
-                <form class="" action="Login" method="post">
+                <form class="" action="Frontal" method="post">
                   <div class="row">
                     <div class="input-field col s12">
                       <input id="email" type="text" name="email" value="" required>
