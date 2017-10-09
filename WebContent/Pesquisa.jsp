@@ -8,6 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<c:forEach ></c:forEach>
+	
 </body>
 </html>
