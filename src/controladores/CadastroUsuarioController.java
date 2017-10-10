@@ -36,7 +36,6 @@ public class CadastroUsuarioController implements Comando{
 		String senha = request.getParameter("senha");
 		String profissao = request.getParameter("profissao");
 		String sexo = request.getParameter("sexo");
-		System.out.println(email);
 		//foto
 		String caminho = File.separator+request.getServletContext().getRealPath("img")+File.separator+email;
 		File caminhoUser = new File(caminho);

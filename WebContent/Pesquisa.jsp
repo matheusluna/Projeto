@@ -16,37 +16,30 @@
   	<jsp:include page="header.jsp"></jsp:include>
     <div class="row container">
       <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width">
-        <li class="tab col s3"><a href="#test-swipe-1">Pessoas</a></li>
-        <li class="tab col s3"><a class="active" href="#test-swipe-2">Locais</a></li>
+        <li class="tab col s3"><a class="active" href="#test-swipe-1">Pessoas</a></li>
+        <li class="tab col s3"><a href="#test-swipe-2">Locais</a></li>
         <li class="tab col s3"><a href="#test-swipe-3">Eventos</a></li>
       </ul>
       <div id="test-swipe-1" class="col s12">
           <div class="container">
             <ul class="collection">
-              <li class="collection-item avatar">
-                <img src="images/yuna.jpg" alt="" class="circle">
-                <span class="title">Title</span>
-                <p>First Line <br>
-                   Second Line
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-              </li>
-              <li class="collection-item avatar">
-                <img src="images/yuna.jpg" alt="" class="circle">
-                <span class="title">Title</span>
-                <p>First Line <br>
-                   Second Line
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-              </li>
-              <li class="collection-item avatar">
-                <img src="images/yuna.jpg" alt="" class="circle">
-                <span class="title">Title</span>
-                <p>First Line <br>
-                   Second Line
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-              </li>
+              <c:forEach var="pessoa" items="${pessoas}">
+              	
+              	<li class="collection-item avatar">
+	              	<c:choose>
+					  <c:when test="${pessoa.foto eq ''}">
+					 	<ahref="/Projeto/Frontal?ex=Pessoa&email=${pessoa.email}"><img class="circle" src="img/iconPadrao.jpg"></a>
+					  </c:when>
+					  <c:otherwise>
+					 	<a href="/Projeto/Frontal?ex=Pessoa&email=${pessoa.email}"><img class="circle" src= "${pessoa.foto}"></a>
+					  </c:otherwise>
+					</c:choose>
+                	<span class="title"><a href="/Projeto/Frontal?ex=Pessoa&email=${pessoa.email}">${pessoa.nome}</a></span>
+                	<p>${pessoa.cidade}</p>
+              	</li>
+              </c:forEach>
+              
+              
             </ul>
 
           </div>
