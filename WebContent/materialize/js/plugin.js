@@ -20,5 +20,6 @@ $(document).ready(function() {
     labelYearSelect: 'Selecione um ano',
     format: 'dd/mm/yyyy'
   });
-  
+  $('.parallax').parallax();
+  $('.modal').modal();
 });

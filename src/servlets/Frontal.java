@@ -40,7 +40,6 @@ public class Frontal extends HttpServlet {
         
         response.setCharacterEncoding("UTF-8");
         String control = request.getParameter("ex");
-        System.out.println(control);
         try {
             Comando com = (Comando) Class.forName("controladores."+control+"Controller").newInstance();
             com.execute(request, response);

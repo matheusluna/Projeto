@@ -24,17 +24,6 @@ public class PesquisaUsuarioController implements Comando{
 		// TODO Auto-generated method stub
 		DaoUsuario dao = new DaoUsuario();
 		List<Pessoa> lista = dao.pesquisa(request.getParameter("pesquisa"));
-//		List<String> nomes = new ArrayList<>();
-//		List<String> emails = new ArrayList<>();
-//		List<String> fotos = new ArrayList<>();
-//		for(Pessoa p : lista) {
-//			nomes.add(p.getNome());
-//			emails.add(p.getEmail());
-//			fotos.add(p.getFoto());
-//		}
-//		request.setAttribute("nomes", nomes);
-//		request.setAttribute("emails", emails);
-//		request.setAttribute("fotos", fotos);
 		request.setAttribute("pessoas", lista);
 		request.getRequestDispatcher("Pesquisa.jsp").forward(request, response);
 	}

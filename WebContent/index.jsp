@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
@@ -39,7 +38,7 @@
                   <div class="row">${mensagem}</div>
                   <div class="row">
                     <div class="col s12">
-                      <label>Não possui conta? <a href="cadastro.jsp">Clique aqui</a></label>
+                      <label>NÃ£o possui conta? <a href="cadastro.jsp">Clique aqui</a></label>
                     </div>
                   </div>
                   <div class="row center-align">

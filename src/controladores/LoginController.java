@@ -25,17 +25,22 @@ public class LoginController implements Comando {
 		DaoUsuario dao = new DaoUsuario();
 		
 		Pessoa pessoa = dao.read(request.getParameter("email"));
-		
-		if(pessoa.validaUsuario(request.getParameter("senha"))) {
-			HttpSession session = request.getSession();
-			session.setAttribute("usuario", pessoa.getEmail());
-			session.setAttribute("nome", pessoa.getNome());
-			session.setAttribute("foto", pessoa.getFoto());
-			
-			request.getRequestDispatcher("Principal.jsp").forward(request, response);
+		if(pessoa != null) {
+			if(pessoa.validaUsuario(request.getParameter("senha"))) {
+				HttpSession session = request.getSession();
+				session.setAttribute("usuario", pessoa.getEmail());
+				session.setAttribute("nome", pessoa.getNome());
+				session.setAttribute("foto", pessoa.getFoto());
+				
+				request.getRequestDispatcher("Principal.jsp").forward(request, response);
+			}else {
+				request.setAttribute("mensagem", "Senha inválida");
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+			}
 		}else {
 			request.setAttribute("mensagem", "Login inválido");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
+		
 	} 
 }
