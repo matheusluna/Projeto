@@ -25,24 +25,48 @@ public class DaoAmigo implements DaoAmigoInterface{
 			Amigo amigo = new Amigo(email, rs.getString("amigo"));
 			lista.add(amigo);
 		}
+		stmt.close();
+		con.close();
 		return lista;
 	}
 
 	@Override
-	public boolean create(Amigo amigo) {
+	public boolean create(Amigo amigo) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
-		return false;
+		List<Amigo> lista = list(amigo.getPessoa1());
+		for(Amigo a : lista) {
+			if(a.getPessoa1().equals(amigo.getPessoa1()) && a.getPessoa2().equals(amigo.getPessoa2())) {
+				return false;
+			}
+		}
+		
+		Connection con = new ConFactory().getConnection();
+		String sql = "insert into amigo values(?, ?)";
+		PreparedStatement stmt = con.prepareStatement(sql);
+		stmt.setString(1, amigo.getPessoa1());
+		stmt.setString(2, amigo.getPessoa2());
+		boolean resultado = !stmt.execute();
+		stmt.close();
+		con.close();
+		return resultado;
 	}
 
 	@Override
-	public Amigo read(String email1, String email2) {
+	public Amigo read(String email1, String email2) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
+		List<Amigo> lista = list(email1);
+		for(Amigo a : lista) {
+			if(a.getPessoa1().equals(email1) && a.getPessoa2().equals(email2)) {
+				return a;
+			}
+		}
 		return null;
 	}
 
 	@Override
 	public boolean update(Amigo amigo) {
 		// TODO Auto-generated method stub
+		
 		return false;
 	}
 
