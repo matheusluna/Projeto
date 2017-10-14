@@ -71,8 +71,14 @@ public class DaoAmigo implements DaoAmigoInterface{
 	}
 
 	@Override
-	public boolean delete(Amigo amigo) {
-		// TODO Auto-generated method stub
+	public boolean delete(Amigo amigo) throws ClassNotFoundException, SQLException {
+		List<Amigo> lista = list(amigo.getPessoa1());
+		for(Amigo a : lista) {
+			if(a.getPessoa1().equals(amigo.getPessoa1()) && a.getPessoa2().equals(amigo.getPessoa2())) {
+				Connection con = new ConFactory().getConnection();
+				return false;
+			}
+		}
 		return false;
 	}
 	

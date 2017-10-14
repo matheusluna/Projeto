@@ -63,31 +63,45 @@ public List<Solicitacao> listar() throws ClassNotFoundException, SQLException{
 		}
 		
 		Connection con = new ConFactory().getConnection();
-		String sql = "insert into solicitacao value (?, ?)";
+		String sql = "insert into solicitacao values(?, ?)";
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, solicitacao.getEmissor());
 		stmt.setString(2, solicitacao.getReceptor());
 		boolean resultado = !stmt.execute();
 		stmt.close();
 		con.close();
-		return false;
+		return resultado;
 	}
 
 	@Override
 	public Solicitacao read(String emissor, String receptor) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
+		List<Solicitacao> lista = listar(emissor);
+		for(Solicitacao s : lista) {
+			if(s.getEmissor().equals(emissor) && s.getReceptor().equals(receptor)) {
+				return s;
+			}
+		}
 		return null;
-	}
-
-	@Override
-	public boolean update(Solicitacao solicitacao) throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 	@Override
 	public boolean delete(Solicitacao solicitacao) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
+		List<Solicitacao> lista = listar();
+		for(Solicitacao s : lista) {
+			if((s.getEmissor().equals(solicitacao.getEmissor()) && s.getReceptor().equals(solicitacao.getReceptor())) || (s.getReceptor().equals(solicitacao.getEmissor()) && s.getEmissor().equals(solicitacao.getReceptor()))) {
+				Connection con = new ConFactory().getConnection();
+				String sql = "delete from solicitacao where emissor = ? and receptor = ?";
+				PreparedStatement stmt = con.prepareStatement(sql);
+				stmt.setString(1, solicitacao.getEmissor());
+				stmt.setString(2, solicitacao.getReceptor());
+				boolean resultado = !stmt.execute();
+				stmt.close();
+				con.close();
+				return resultado;
+			}
+		}
 		return false;
 	}
 	
