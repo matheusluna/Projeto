@@ -48,13 +48,30 @@
 		    				<label for="hora">Hora</label>
 		    			</div>
 		    		</div>
+		    		<div class="row">
+		    			<div class="input-field col s4">
+		    				<input type="text" name="rua" id="rua">
+		    				<label for="rua">Rua</label>
+		    			</div>
+		    			<div class="input-field col s4">
+		    				<input type="text" name="cidade" id="cidade">
+		    				<label for="cidade">Cidade</label>
+		    			</div>
+		    			<div class="input-field col s4">
+		    				<input type="text" name="estado" id="estado">
+		    				<label for="estado">Estado</label>
+		    			</div>
+		    		</div>
+		    		<div class="modal-footer">
+		    			<input type="hidden" name="ex" value="CriaEvento">
+		    			<input type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" value="Salvar">
+				      
+				    </div>
 		    	</form>
 		    </div>
 		    <div id="test2" class="col s12">Test 2</div>
 		  </div>
-	    <div class="modal-footer">
-	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-	    </div>
+	    
 	  </div>
   	
   	
@@ -63,6 +80,8 @@
 	      <i class="large material-icons">add</i>
 	    </a>
 	  </div>
+	  
+	${mensagem}
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     
