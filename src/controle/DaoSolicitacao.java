@@ -13,19 +13,19 @@ import interfaces.DaoSolicitacaoInterface;
 
 public class DaoSolicitacao implements DaoSolicitacaoInterface{
 	
-	public List<Solicitacao> listar(String emissor) throws ClassNotFoundException, SQLException{
+	public List<Solicitacao> listar(String receptor) throws ClassNotFoundException, SQLException{
 		
 		List<Solicitacao> lista = new ArrayList<>();
 		
 		Connection con = new ConFactory().getConnection();
-		String sql="select * from solicitacao where emissor = ?";
+		String sql="select * from solicitacao where receptor = ?";
 		PreparedStatement stmt = con.prepareStatement(sql);
-		stmt.setString(1, emissor);
+		stmt.setString(1, receptor);
 		ResultSet rs = stmt.executeQuery();
 		while(rs.next()) {
 			String emissorBanco = rs.getString("emissor");
-			String receptor = rs.getString("receptor");
-			Solicitacao solicitacao = new Solicitacao(emissorBanco, receptor);
+			String receptorsql = rs.getString("receptor");
+			Solicitacao solicitacao = new Solicitacao(emissorBanco, receptorsql);
 			lista.add(solicitacao);
 		}
 		stmt.close();
