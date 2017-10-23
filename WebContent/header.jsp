@@ -27,7 +27,7 @@
 	    <li><a href="/Projeto/Frontal?ex=Perfil">Perfil</a></li>
 	    <li><a href="/Projeto/Notificacao">Notificações</a></li>
 	    <li><a href="#" data-activates="slide-out2" class="button-collapse2 show-on-large">Pesquisa</a></li>
-	    <li><a class="waves-effect" href="/Projeto/Amigo">Amigos</a></li>
+	    <li><a class="waves-effect" href="/Projeto/Frontal?ex=Amigos">Amigos</a></li>
 	    <li><a class="waves-effect" href="/Projeto/Amigo">Conversas</a></li>
 	    <li><a href="/Projeto/Frontal?ex=Logout"><i class="material-icons">power_settings_new</i>Logout</a></li>
 	  </ul>

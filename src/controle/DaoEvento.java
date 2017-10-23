@@ -57,6 +57,7 @@ public class DaoEvento implements DaoEventoInterface{
 		Connection con = new ConFactory().getConnection();
 		String sql = "select p.id id, p.nome nome, p.descricao descricao, p.rua rua, p.cidade cidade, p.estado estado, e.dia dia, e.hora hora, e.responsavel responsavel from publicacao p, evento e where p.id = e.idpublicacao and p.nome ilike ?";
 		PreparedStatement stmt = con.prepareStatement(sql);
+		stmt.setString(1, nome);
 		ResultSet rs = stmt.executeQuery();
 		while(rs.next()) {
 			int id = rs.getInt("id");
@@ -72,7 +73,7 @@ public class DaoEvento implements DaoEventoInterface{
 	        instant = Instant.ofEpochMilli(horasql.getTime());
 	        LocalTime hora = LocalDateTime.ofInstant(instant, ZoneId.systemDefault()).toLocalTime();
 	        Pessoa responsavel = dao.read(rs.getString("responsavel"));
-	        Evento evento = new Evento(id, nome, descricao, rua, cidade, estado, dia, hora, responsavel);
+	        Evento evento = new Evento(id, nomesql, descricao, rua, cidade, estado, dia, hora, responsavel);
 	        lista.add(evento);
 		}
 		return lista;
